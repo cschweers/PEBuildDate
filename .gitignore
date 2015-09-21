@@ -1,0 +1,7 @@
+bin/
+obj/
+*.suo
+*.user
+
+# git version lable
+CommonAssemblyInfo.cs
