@@ -7,6 +7,7 @@ namespace Schweers
 {
     /// <summary>
     /// http://microsoft.public.de.german.entwickler.dotnet.vb.narkive.com/dD3ket9l/kompilierungszeitpunkt-der-assembly-abfragen#post5
+	/// https://groups.google.com/forum/#!msg/microsoft.public.de.german.entwickler.dotnet.vb/Fc2ql8IY_Ro/aanyvalzIGkJ
     /// </summary>
 	public class PEBuildDate
 	{
