@@ -1,0 +1,23 @@
+https://docs.microsoft.com/en-us/windows/desktop/debug/pe-format
+
+TODO:
+Load Configuration Directory
+The data directory entry for a pre-reserved SEH load configuration structure
+must specify a particular size of the load configuration structure because
+the operating system loader always expects it to be a certain value. In that
+regard, the size is really only a version check. For compatibility with
+Windows XP and earlier versions of Windows, the size must be 64 for x86
+images.
+
+Load Configuration Layout
+The load configuration structure has the following layout for 32-bit and
+64-bit PE files:
+
+Offset	Size	Field	        Description
+0       4       Characteristics Flags that indicate attributes of the file,
+                currently unused. 
+4       4       TimeDateStamp   Date and time stamp value. The value is
+                represented in the number of seconds that have elapsed since
+                midnight (00:00:00), January 1, 1970, Universal Coordinated
+				Time, according to the system clock. The time stamp can be
+				printed by using the C runtime (CRT) time function.
