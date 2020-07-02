@@ -1,3 +1,7 @@
-# PEBuildDate
+<h1 align="center">
+    PEBuildDate
+</h1>
 
-get the build date and time of arbitrary portable executable (PE) images(exe, dll)
+<a href="./LICENSE" title="License"><img src="https://img.shields.io/badge/license-Unlicense-blue.svg"></a>
+
+Get the creation date and time of any Portable Executable (PE) images (exe, dll)
