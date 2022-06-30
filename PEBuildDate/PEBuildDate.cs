@@ -26,12 +26,13 @@ namespace Schweers
 			_assemblyName = Filename;
 		}
 
+
 		public DateTime GetDateTime()
 		{
 			int lPEOffset;
 			char[] lPE;
 			int lTimeStamp;
-			DateTime lDate = new DateTime(1970, 1, 1);
+			DateTime lDate = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 			const int PE_OFFSET = 0x3C;
 			const int PE_TIMESTAMP = 8;
 			const string PE_SIGNATURE = "PE\0\0";
