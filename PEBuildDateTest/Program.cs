@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Schweers;
+
+namespace PEBuildDate
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Schweers.PEBuildDate date = new Schweers.PEBuildDate();
+            Console.WriteLine("Assembly build on {0,-25} (\"local\")", date.ToString());
+            Console.WriteLine("Assembly build on {0,-25} (\"ISO8601\")", date.ToString("--ISO8601"));
+            Console.WriteLine("Assembly build on {0,-25} (\"UTC\")", date.GetDateTime().ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ"));
+            if(Debugger.IsAttached)
+            {
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadLine();
+            }
+            return;
+        }
+    }
+}
