@@ -9,8 +9,6 @@ namespace Schweers
     /// </summary>
 	public class PEBuildDate
 	{
-		private string _assemblyName;
-
 		public PEBuildDate() : this( System.Reflection.Assembly.GetExecutingAssembly())
 		{
 		}
@@ -21,7 +19,7 @@ namespace Schweers
 
 		public PEBuildDate(string Filename)
 		{
-			_assemblyName = Filename;
+            AssemblyName = Filename;
 		}
 
 
@@ -35,12 +33,12 @@ namespace Schweers
 			const int PE_TIMESTAMP = 8;
 			const string PE_SIGNATURE = "PE\0\0";
 
-			if (!System.IO.File.Exists(_assemblyName))
+			if (!System.IO.File.Exists(AssemblyName))
 			{
 				throw new FileNotFoundException();
 			}
 
-			Stream lStream = File.Open(_assemblyName, FileMode.Open, FileAccess.Read, FileShare.Read);
+			Stream lStream = File.Open(AssemblyName, FileMode.Open, FileAccess.Read, FileShare.Read);
 			BinaryReader lReader = new BinaryReader( lStream);
 
 			lReader.BaseStream.Seek( PE_OFFSET, SeekOrigin.Begin);
@@ -84,9 +82,16 @@ namespace Schweers
 			}
 			return sRet;
 		}
-	}
 
-	public class InvalidPEFileException : Exception
+        #region Properties
+
+        public string AssemblyName { get; set; } = string.Empty;
+
+        #endregion
+
+    }
+
+    public class InvalidPEFileException : Exception
 	{
 		public InvalidPEFileException()
 			: base("Die Datei ist keine gültige PE-Datei.")
